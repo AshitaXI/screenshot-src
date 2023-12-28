@@ -47,22 +47,25 @@ namespace screenshot
     {
         bool take_{false};
         bool hide_{false};
+        bool silent_{false};
         stage stage_{stage::idle};
         type type_{type::png};
 
         state_t(void)
             : take_{false}
             , hide_{false}
+            , silent_{false}
             , stage_{stage::idle}
             , type_{type::png}
         {}
 
         auto reset(void) -> void
         {
-            this->take_  = false;
-            this->hide_  = false;
-            this->stage_ = stage::idle;
-            this->type_  = type::png;
+            this->take_   = false;
+            this->hide_   = false;
+            this->silent_ = false;
+            this->stage_  = stage::idle;
+            this->type_   = type::png;
         }
     };
 

@@ -121,6 +121,8 @@ namespace screenshot
                     this->state_.type_ = screenshot::type::png;
                 if (args[x] == "hide")
                     this->state_.hide_ = true;
+                if (args[x] == "silent")
+                    this->state_.silent_ = true;
             }
 
             this->state_.take_  = true;
@@ -321,7 +323,7 @@ namespace screenshot
                 break;
         }
 
-        if (!ret)
+        if (!ret || this->state_.silent_)
             return;
 
         std::ostringstream msg;
