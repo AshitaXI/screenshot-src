@@ -210,8 +210,10 @@ namespace screenshot
             {
                 case screenshot::type::bmp:
                     path += ".bmp";
+                    break;
                 case screenshot::type::png:
                     path += ".png";
+                    break;
             }
 
             return path;
