@@ -81,7 +81,8 @@ namespace screenshot
 
         this->state_.reset();
 
-        const auto path = std::format("{}\\screenshots\\", core->GetInstallPath());
+        char path[MAX_PATH]{};
+        ::sprintf_s(path, "%s\\screenshots\\", core->GetInstallPath());
 
         std::error_code err;
         if (const auto ret = std::filesystem::create_directories(path, err); !ret && err.value() > 0)
@@ -203,7 +204,8 @@ namespace screenshot
             SYSTEMTIME stime{};
             ::GetLocalTime(&stime);
 
-            auto path = std::format("{}\\screenshots\\{}_{:04d}.{:02d}.{:02d}_{:02d}{:02d}{:02d}",
+            char path[MAX_PATH]{};
+            ::sprintf_s(path, "%s\\screenshots\\%s_%04d.%02d.%02d_%02d%02d%02d",
                 this->core_->GetInstallPath(),
                 this->core_->GetMemoryManager()->GetParty()->GetMemberName(0),
                 stime.wYear, stime.wMonth, stime.wDay, stime.wHour, stime.wMinute, stime.wSecond);
@@ -211,10 +213,10 @@ namespace screenshot
             switch (this->state_.type_)
             {
                 case screenshot::type::bmp:
-                    path += ".bmp";
+                    ::strcat_s(path, ".bmp");
                     break;
                 case screenshot::type::png:
-                    path += ".png";
+                    ::strcat_s(path, ".png");
                     break;
             }
 
