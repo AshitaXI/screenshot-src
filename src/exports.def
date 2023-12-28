@@ -1,0 +1,22 @@
+LIBRARY "screenshot"
+EXPORTS
+
+;---------------------------------------------------------------------------------------------------
+;
+; CreatePlugin Export (expCreatePlugin)
+;
+; Export used to create and return an instance of this plugins main class object.
+;
+;---------------------------------------------------------------------------------------------------
+
+    expCreatePlugin             @1
+
+;---------------------------------------------------------------------------------------------------
+;
+; GetInterfaceVersion Export (expGetInterfaceVersion)
+;
+; Export used to report the Ashita interface version this plugin was compiled against.
+;
+;---------------------------------------------------------------------------------------------------
+
+    expGetInterfaceVersion      @2
