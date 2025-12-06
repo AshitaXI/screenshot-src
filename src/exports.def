@@ -13,10 +13,20 @@ EXPORTS
 
 ;---------------------------------------------------------------------------------------------------
 ;
+; DestroyPlugin Export (expDestroyPlugin)
+;
+; Export used to destroy the created plugin instance returned from expCreatePlugin.
+;
+;---------------------------------------------------------------------------------------------------
+
+    expDestroyPlugin            @2
+
+;---------------------------------------------------------------------------------------------------
+;
 ; GetInterfaceVersion Export (expGetInterfaceVersion)
 ;
 ; Export used to report the Ashita interface version this plugin was compiled against.
 ;
 ;---------------------------------------------------------------------------------------------------
 
-    expGetInterfaceVersion      @2
+    expGetInterfaceVersion      @3
